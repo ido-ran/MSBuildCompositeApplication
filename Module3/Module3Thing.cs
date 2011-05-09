@@ -4,6 +4,6 @@ using System.Linq;
 using System.Text;
 
 namespace Module3 {
-  public class Class1 {
+  public class Module3Thing {
   }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Module2 {
-  public class Class1 {
+namespace Module1 {
+  public class Modul1Thing {
   }
 }
