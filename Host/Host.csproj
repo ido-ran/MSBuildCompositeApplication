@@ -62,16 +62,6 @@
       <Name>Module2</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup Condition=" '$(ModuleSet)' == 'Std3' ">
-    <ProjectReference Include="..\Module2\Module2.csproj">
-      <Project>{21A18AB2-47E4-492E-8E56-824834BEE212}</Project>
-      <Name>Module2</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Module3\Module3.csproj">
-      <Project>{2BB927AB-4F31-46F9-9D09-AB58269F13CD}</Project>
-      <Name>Module3</Name>
-    </ProjectReference>
-  </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
       <Visible>False</Visible>
@@ -126,4 +116,17 @@
   <Target Name="AfterClean">
     <MSBuild Projects="@(ModulesToBuild)" RebaseOutputs="true" Targets="Clean" />
   </Target>-->
+
+  <Target Name="BeforeBuild">
+    <ItemGroup Condition=" '$(ModuleSet)' == 'Std3' ">
+      <ProjectReference Include="..\Module2\Module2.csproj">
+        <Project>{21A18AB2-47E4-492E-8E56-824834BEE212}</Project>
+        <Name>Module2</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\Module3\Module3.csproj">
+        <Project>{2BB927AB-4F31-46F9-9D09-AB58269F13CD}</Project>
+        <Name>Module3</Name>
+      </ProjectReference>
+    </ItemGroup>
+  </Target>
 </Project>
